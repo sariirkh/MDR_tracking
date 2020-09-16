@@ -25,6 +25,33 @@ class Admin extends CI_Controller{
         redirect('admin/index');
     }
     
+    public function register_admin(){
+        $this->load->view('admin/_template/head');
+        //$this->load->view('admin/_template/topbar');
+        $this->load->view('admin/_template/js');
+        $this->load->view('register_admin');
+        //$this->load->view('admin/_template/footer');
+    }
+    public function proses_regis(){
+        $nama_admin = $this->input->post('nama_admin');
+        $user_admin = $this->input->post('user_admin');
+        $password = $this->input->post('password');
+        $email = $this->input->post('email');
+        $level = $this->input->post('level');
+
+        $data = array(
+            'nama_admin' => $nama_admin,
+            'user_admin' => $user_admin,
+            'password' => $password,
+            'email' => $email,
+            'level' => 'admin'
+        );
+
+
+        $this->Admin_model->input_data($data, 'login_admin');
+        redirect('login');
+    }
+
     public function update(){
         $id_admin = $this->input->post('id_admin');
         $nama_admin = $this->input->post('nama_admin');
