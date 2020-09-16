@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2020 at 10:24 AM
+-- Generation Time: Sep 16, 2020 at 03:40 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -32,7 +32,7 @@ CREATE TABLE `barang` (
   `id_barang` int(9) NOT NULL,
   `nama_barang` varchar(255) NOT NULL,
   `satuan` varchar(255) NOT NULL,
-  `id_kategori` int(11) NOT NULL
+  `harga` decimal(11,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -62,6 +62,50 @@ CREATE TABLE `kurir` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `login_admin`
+--
+
+CREATE TABLE `login_admin` (
+  `id_admin` int(11) NOT NULL,
+  `nama_admin` varchar(255) NOT NULL,
+  `user_admin` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `level` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login_admin`
+--
+
+INSERT INTO `login_admin` (`id_admin`, `nama_admin`, `user_admin`, `password`, `email`, `level`) VALUES
+(1, 'sari', 'sari', 'sari', 'sariirkh@gmail.com', 'admin'),
+(2, 'Ella why', 'ella', 'ella', 'Ellawhy@gmail.com', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_user`
+--
+
+CREATE TABLE `login_user` (
+  `id` int(11) NOT NULL,
+  `nama_depan` varchar(255) NOT NULL,
+  `nama_belakang` varchar(255) NOT NULL,
+  `tipe_identitas` varchar(50) NOT NULL,
+  `no_telepon` varchar(13) NOT NULL,
+  `no_rek` varchar(50) NOT NULL,
+  `nama_rek` varchar(255) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` enum('pelanggan','kurir') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pelanggan`
 --
 
@@ -83,6 +127,8 @@ CREATE TABLE `pengiriman` (
   `tanggal` datetime NOT NULL,
   `id_pelanggan` int(11) NOT NULL,
   `id_kurir` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `biaya` decimal(11,0) NOT NULL,
   `no_kendaraan` varchar(11) NOT NULL,
   `keterangan` varchar(255) NOT NULL,
   `penerima` varchar(255) NOT NULL,
@@ -99,26 +145,6 @@ CREATE TABLE `status` (
   `id_status` int(11) NOT NULL,
   `status_pengiriman` enum('terkirim','dalam perjalanan','gagal','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
-  `nama_panjang` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id_user`, `nama_panjang`, `username`, `password`) VALUES
-(1, 'Sari Rh', 'sari', 'sari');
 
 --
 -- Indexes for dumped tables
@@ -143,6 +169,18 @@ ALTER TABLE `kurir`
   ADD PRIMARY KEY (`id_kurir`);
 
 --
+-- Indexes for table `login_admin`
+--
+ALTER TABLE `login_admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `login_user`
+--
+ALTER TABLE `login_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
@@ -159,12 +197,6 @@ ALTER TABLE `pengiriman`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id_status`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -189,6 +221,18 @@ ALTER TABLE `kurir`
   MODIFY `id_kurir` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `login_admin`
+--
+ALTER TABLE `login_admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `login_user`
+--
+ALTER TABLE `login_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
@@ -205,12 +249,6 @@ ALTER TABLE `pengiriman`
 --
 ALTER TABLE `status`
   MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
