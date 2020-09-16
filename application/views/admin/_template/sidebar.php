@@ -62,7 +62,7 @@
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Daftar Bantuan:</h6>
+      <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="'.base_url('bantuan/profil').'">Data Kurir</a>
       <a class="collapse-item" href="'.base_url('bantuan/syarat').'">Data Kendaraan</a>
       <a class="collapse-item" href="'.base_url('bantuan/pembayaran').'">Data Pelanggan</a>
@@ -70,6 +70,8 @@
   </div>
 </li>
 </li>';?>
+
+
 <!-- Nav Item - Pages Collapse Menu -->
 <?php echo '<li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -78,7 +80,7 @@
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Daftar Pengguna:</h6>
+      <h6 class="collapse-header"></h6>
       <a class="collapse-item" href="'.base_url('admin').'">Maps</a>
       <a class="collapse-item" href="'.base_url('customer').'">Lacak Lokasi</a>
    
@@ -86,19 +88,36 @@
   </div>
 </li>';?>
 
-<!-- Nav Item - Charts -->
-<?php echo '<li class="nav-item">
-  <a class="nav-link" href="'.base_url('admin/getPaket').'">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Data Paket Tour</span></a>
+<?php echo'
+ <li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Bantuan</span>
+  </a>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header"></h6>
+      <a class="collapse-item" href="'.base_url('bantuan/profil').'"></a>
+      <a class="collapse-item" href="'.base_url('bantuan/syarat').'"></a>
+      <a class="collapse-item" href="'.base_url('bantuan/pembayaran').'"></a>
+    </div>
+  </div>
+</li>
 </li>';?>
 
 <!-- Nav Item - Charts -->
-<?php echo '<li class="nav-item">
-  <a class="nav-link" href="'.base_url('request/dtrequest').'">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Data Request Paket Tour</span></a>
-</li>';?>
+<?php //echo '<li class="nav-item">
+  //<a class="nav-link" href="'.base_url('admin/getPaket').'">
+    //<i class="fas fa-fw fa-chart-area"></i>
+    //<span>Data Paket Tour</span></a>
+//</li>';?>
+
+<!-- Nav Item - Charts -->
+<?php //echo '<li class="nav-item">
+  //<a class="nav-link" href="'.base_url('request/dtrequest').'">
+    //<i class="fas fa-fw fa-chart-area"></i>
+    //<span>Data Request Paket Tour</span></a>
+//</li>';?> 
 
   <!-- Nav Item - Charts -->
   <?php echo '<li class="nav-item">
