@@ -12,7 +12,7 @@ class Admin extends CI_Controller{
         //     redirect(base_url('admin/login_admin'));
         // }
         $data['user'] = $this->Admin_model->getAll()->result();
-         $this->template->views('crud/data_admin', $data);
+         $this->template->views('welcome', $data);
     }
     public function edit($id_admin){
         $where = array('id_admin' => $id_admin);
