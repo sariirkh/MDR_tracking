@@ -14,6 +14,14 @@ class Admin extends CI_Controller{
         $data['user'] = $this->Admin_model->getAll()->result();
          $this->template->views('welcome', $data);
     }
+    public function data_admin(){
+        // if($this->session->userdata('status') != "login"){
+        //     redirect(base_url('admin/login_admin'));
+        // }
+        $data['user'] = $this->Admin_model->getAll()->result();
+         $this->template->views('crud/data_admin', $data);
+    }
+
     public function edit($id_admin){
         $where = array('id_admin' => $id_admin);
         $data['user'] = $this->Admin_model->edit_data($where, 'login_admin')->result();
