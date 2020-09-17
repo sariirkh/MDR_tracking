@@ -28,7 +28,7 @@
 <!-- Nav Item - Pages Collapse Menu -->
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url('admin/v_booking');?>">
+  <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Daftar Barang</span></a>
 </li>

@@ -106,6 +106,12 @@ class Admin extends CI_Controller{
         $this->template->views('crud/tambah_admin');
     }
 
+    public function data_barang(){
+        $data['barang'] = $this->Data_barang_model->getAll()->result();
+        $this->template->views('data_barang');
+        
+    }
+
     //PAKET TOUR
     public function getPaket(){
         $this->load->model('Admin_model');

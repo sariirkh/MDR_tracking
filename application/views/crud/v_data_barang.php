@@ -16,7 +16,7 @@
 <div class="card shadow mb-4">
 <div class="card-header py-3">
 <h6 class="m-0 font-weight-bold text-primary datatable">Data Barang</h6>
-<a href="<?php echo base_url('customer/tambah')?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Data</button></a>
+<a href="<?php echo base_url('Data_barang/tambah')?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Data</button></a>
 </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -47,10 +47,10 @@
         </tfoot>
         <tbody>
         <?php $no =1;
-            foreach($user as $baris){
+            foreach($barang as $baris){
         ?>
         <tr><td><?php echo $no++;?></td>
-             <td><?php echo $baris->id;?></td>
+             <td><?php echo $baris->id_barang;?></td>
              <td><?php echo $baris->nama_barang;?></td>
              <td><?php echo $baris->satuan;?></td>
              <td><?php echo $baris->harga;?></td>
@@ -58,9 +58,10 @@
             <td>
             <?php
                    
+                   echo '<a href="'.base_url('Data_barang/edit/'.$baris->id_barang).'" class="btn btn-success btn-icon-split"><i class="fas fa-edit" style="padding: 5px;"></i></a>';
+                   echo "  ";
+                echo '<a href="'.base_url('Data_barang/hapus/'.$baris->id_barang).'" class="btn btn-danger btn-icon-split"><i class="fas fa-trash" style="padding: 5px;"></i></a>';
              
-                echo '<a href="'.base_url('customer/hapus/'.$baris->id).'" class="btn btn-danger btn-icon-split"><i class="fas fa-trash" style="padding: 5px;"></i></a>';
-                    
             ?>
             
             </td>
