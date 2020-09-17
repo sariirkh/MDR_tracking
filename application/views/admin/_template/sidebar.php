@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">Trajekline</div>
+  <div class="sidebar-brand-text mx-3">MDR-Tracking</div>
 </a>
 
 <!-- Divider -->
@@ -30,26 +30,26 @@
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('admin/v_booking');?>">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Dashboard Customer</span></a>
+    <span>Daftar Barang</span></a>
 </li>
 <!-- Nav Item - Charts -->
 <?php echo'
-<li class="nav-item">
+ <li class="nav-item">
   <a class="nav-link" href="'.base_url('validasi/index').'">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Validasi Booking</span></a>
+    <span>Pengiriman</span></a>
 </li>
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
-    <span>Data Bantuan</span>
+    <span>Data Distribusi</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Daftar Bantuan:</h6>
-      <a class="collapse-item" href="'.base_url('bantuan/profil').'">Setup Profil</a>
-      <a class="collapse-item" href="'.base_url('bantuan/syarat').'">Setup Syarat</a>
-      <a class="collapse-item" href="'.base_url('bantuan/pembayaran').'">Setup Cara Bayar</a>
+      <a class="collapse-item" href="'.base_url('bantuan/profil').'">Data Kurir</a>
+      <a class="collapse-item" href="'.base_url('bantuan/syarat').'">Data Kendaraan</a>
+      <a class="collapse-item" href="'.base_url('bantuan/pembayaran').'">Data Pelanggan</a>
     </div>
   </div>
 </li>
@@ -58,13 +58,13 @@
 <?php echo '<li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
-    <span>Data Pengguna</span>
+    <span>Tracking</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Daftar Pengguna:</h6>
-      <a class="collapse-item" href="'.base_url('admin').'">Data Admin</a>
-      <a class="collapse-item" href="'.base_url('customer').'">Data Customer</a>
+      <a class="collapse-item" href="'.base_url('admin').'">Maps</a>
+      <a class="collapse-item" href="'.base_url('customer').'">Lacak Lokasi</a>
    
     </div>
   </div>
