@@ -28,9 +28,27 @@
 <!-- Nav Item - Pages Collapse Menu -->
 <!-- Nav Item - Charts -->
 <li class="nav-item">
+  <a class="nav-link" href="<?php echo base_url('Admin');?>">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Dashboard</span></a>
+</li>
+
+<li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Daftar Barang</span></a>
+    <span>Batas Area</span></a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Kendaraan</span></a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>History</span></a>
 </li>
 <!-- Nav Item - Charts -->
 <?php echo '<li class="nav-item">
@@ -49,61 +67,6 @@
 </li>';?>
 
 
-<?php echo'
- <li class="nav-item">
-  <a class="nav-link" href="'.base_url('validasi/index').'">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Pengiriman</span></a>
-</li>
-<li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
-    <span>Data Distribusi</span>
-  </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header"></h6>
-      <a class="collapse-item" href="'.base_url('bantuan/profil').'">Data Kurir</a>
-      <a class="collapse-item" href="'.base_url('bantuan/syarat').'">Data Kendaraan</a>
-      <a class="collapse-item" href="'.base_url('bantuan/pembayaran').'">Data Pelanggan</a>
-    </div>
-  </div>
-</li>
-</li>';?>
-
-
-<!-- Nav Item - Pages Collapse Menu -->
-<?php echo '<li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
-    <span>Tracking</span>
-  </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header"></h6>
-      <a class="collapse-item" href="'.base_url('admin').'">Maps</a>
-      <a class="collapse-item" href="'.base_url('customer').'">Lacak Lokasi</a>
-   
-    </div>
-  </div>
-</li>';?>
-
-<?php echo'
- <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
-    <span>Bantuan</span>
-  </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header"></h6>
-      <a class="collapse-item" href="'.base_url('bantuan/profil').'"></a>
-      <a class="collapse-item" href="'.base_url('bantuan/syarat').'"></a>
-      <a class="collapse-item" href="'.base_url('bantuan/pembayaran').'"></a>
-    </div>
-  </div>
-</li>
-</li>';?>
 
 <!-- Nav Item - Charts -->
 <?php //echo '<li class="nav-item">
@@ -120,12 +83,7 @@
 //</li>';?> 
 
   <!-- Nav Item - Charts -->
-  <?php echo '<li class="nav-item">
-  <a class="nav-link" href="'.base_url('saran').'">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Data Saran</span></a>
-</li>';?>
-  
+
 
 
 <!-- Divider -->
