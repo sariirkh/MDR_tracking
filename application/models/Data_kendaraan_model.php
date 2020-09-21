@@ -1,9 +1,9 @@
 <?php
-class Data_barang_model extends CI_Model{
+class Data_kendaraan_model extends CI_Model{
     
     function getAll(){
         $this->db->select('*');
-        $this->db->from('barang');
+        $this->db->from('kendaraan');
         $query = $this->db->get();
         return $query;
     }
