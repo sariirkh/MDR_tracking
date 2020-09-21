@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2020 at 03:40 PM
+-- Generation Time: Sep 21, 2020 at 04:51 AM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -25,19 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
---
-
-CREATE TABLE `barang` (
-  `id_barang` int(9) NOT NULL,
-  `nama_barang` varchar(255) NOT NULL,
-  `satuan` varchar(255) NOT NULL,
-  `harga` decimal(11,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `kendaraan`
 --
 
@@ -46,17 +33,6 @@ CREATE TABLE `kendaraan` (
   `jenis_kendaraan` varchar(255) NOT NULL,
   `merk_kendaraan` varchar(255) NOT NULL,
   `nomor_kendaraan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `kurir`
---
-
-CREATE TABLE `kurir` (
-  `id_kurir` int(11) NOT NULL,
-  `nama_kurir` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -106,44 +82,32 @@ CREATE TABLE `login_user` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Table structure for table `lokasi`
 --
 
-CREATE TABLE `pelanggan` (
-  `id_pelanggan` int(11) NOT NULL,
-  `nama_pelanggan` varchar(255) NOT NULL,
-  `alamat_pelanggan` varchar(255) NOT NULL,
-  `telepon_pelanggan` varchar(13) NOT NULL
+CREATE TABLE `lokasi` (
+  `id_lokasi` int(11) NOT NULL,
+  `id_kendaraan` int(11) NOT NULL,
+  `nama_lokasi` varchar(255) NOT NULL,
+  `latitude` varchar(255) NOT NULL,
+  `longitude` varchar(255) NOT NULL,
+  `batas` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengiriman`
+-- Table structure for table `riwayat`
 --
 
-CREATE TABLE `pengiriman` (
-  `id_pengiriman` int(11) NOT NULL,
-  `tanggal` datetime NOT NULL,
-  `id_pelanggan` int(11) NOT NULL,
-  `id_kurir` int(11) NOT NULL,
-  `id_barang` int(11) NOT NULL,
-  `biaya` decimal(11,0) NOT NULL,
-  `no_kendaraan` varchar(11) NOT NULL,
-  `keterangan` varchar(255) NOT NULL,
-  `penerima` varchar(255) NOT NULL,
-  `status_pengiriman` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `status`
---
-
-CREATE TABLE `status` (
-  `id_status` int(11) NOT NULL,
-  `status_pengiriman` enum('terkirim','dalam perjalanan','gagal','') NOT NULL
+CREATE TABLE `riwayat` (
+  `id_riwayat` int(11) NOT NULL,
+  `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_lokasi` int(11) NOT NULL,
+  `latitude_now` varchar(255) NOT NULL,
+  `longitude_now` varchar(255) NOT NULL,
+  `jarak_now` double NOT NULL,
+  `status` enum('di jalan','sudah sampai') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -151,22 +115,10 @@ CREATE TABLE `status` (
 --
 
 --
--- Indexes for table `barang`
---
-ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id_barang`);
-
---
 -- Indexes for table `kendaraan`
 --
 ALTER TABLE `kendaraan`
   ADD PRIMARY KEY (`id_kendaraan`);
-
---
--- Indexes for table `kurir`
---
-ALTER TABLE `kurir`
-  ADD PRIMARY KEY (`id_kurir`);
 
 --
 -- Indexes for table `login_admin`
@@ -181,44 +133,20 @@ ALTER TABLE `login_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pelanggan`
+-- Indexes for table `lokasi`
 --
-ALTER TABLE `pelanggan`
-  ADD PRIMARY KEY (`id_pelanggan`);
-
---
--- Indexes for table `pengiriman`
---
-ALTER TABLE `pengiriman`
-  ADD PRIMARY KEY (`id_pengiriman`);
-
---
--- Indexes for table `status`
---
-ALTER TABLE `status`
-  ADD PRIMARY KEY (`id_status`);
+ALTER TABLE `lokasi`
+  ADD PRIMARY KEY (`id_lokasi`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `barang`
---
-ALTER TABLE `barang`
-  MODIFY `id_barang` int(9) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `kendaraan`
 --
 ALTER TABLE `kendaraan`
   MODIFY `id_kendaraan` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `kurir`
---
-ALTER TABLE `kurir`
-  MODIFY `id_kurir` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `login_admin`
@@ -233,22 +161,10 @@ ALTER TABLE `login_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pelanggan`
+-- AUTO_INCREMENT for table `lokasi`
 --
-ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pengiriman`
---
-ALTER TABLE `pengiriman`
-  MODIFY `id_pengiriman` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `status`
---
-ALTER TABLE `status`
-  MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `lokasi`
+  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

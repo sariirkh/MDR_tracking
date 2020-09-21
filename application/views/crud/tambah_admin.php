@@ -11,6 +11,8 @@
     </div>
     <div class="form-group">
       <input type="text" class="form-control form-control-user" id="user_admin"name="user_admin" placeholder="Masukkan Username"  require>
+    </div>
+    <div class="form-group">  
       <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password "  require >
     </div>
     <div class="form-group">
