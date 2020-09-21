@@ -29,7 +29,7 @@
 <!-- Nav Item - Charts -->
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('Admin');?>">
-    <i class="fas fa-fw fa-chart-area"></i>
+    <i class="fas fa-fw fa fa-home"></i>
     <span>Dashboard</span></a>
 </li>
 
@@ -41,7 +41,7 @@
 
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('Data_kendaraan');?>">
-    <i class="fas fa-fw fa-chart-area"></i>
+    <i class="fas fa-fw fa fa-truck"></i>
     <span>Kendaraan</span></a>
 </li>
 
@@ -53,7 +53,7 @@
 <!-- Nav Item - Charts -->
 <?php echo '<li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-fw fa fa-users"></i>
     <span>Data Pengguna</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
