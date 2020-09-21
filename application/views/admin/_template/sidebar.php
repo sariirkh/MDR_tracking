@@ -35,7 +35,7 @@
 
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
-    <i class="fas fa-fw fa-chart-area"></i>
+    <i class="fas fa-fw fa fa-map-marker"></i>
     <span>Batas Area</span></a>
 </li>
 
