@@ -36,7 +36,7 @@
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
     <i class="fas fa-fw fa fa-map-marker"></i>
-    <span>Batas Area</span></a>
+    <span>Rute</span></a>
 </li>
 
 <li class="nav-item">
@@ -48,7 +48,7 @@
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>History</span></a>
+    <span>Update Rute</span></a>
 </li>
 <!-- Nav Item - Charts -->
 <?php echo '<li class="nav-item">
