@@ -22,17 +22,17 @@ class rute extends CI_Controller{
         $pengguna = $this->input->post('pengguna');
         $latitude=$this->input->post('latitude');
         $longitude=$this->input->post('longitude');
-        $radius=$this->input->post('radius');
+        $batas=$this->input->post('batas');
         
 
         $data = array(
-            'id_kendaraan' => $id_kendaraan,
+            'nama_lokasi' => $nama_lokasi,
             'merk_kendaraan' => $merk_kendaraan,
             'nomor_kendaraan' => $nomor_kendaraan,
             'pengguna' => $pengguna,
             'latitude' =>$latitude,
             'longitude' =>$longitude,
-            'radius' =>$radius
+            'batas' =>$batas
 
            
         );
@@ -54,38 +54,38 @@ class rute extends CI_Controller{
         $pengguna = $this->input->post('pengguna');
         $latitude=$this->input->post('latitude');
         $longitude=$this->input->post('longitude');
-        $radius=$this->input->post('radius');
+        $batas=$this->input->post('batas');
         
 
         $data = array(
-            'id_kendaraan' => $id_kendaraan,
+            'nama_lokasi' => $nama_lokasi,
             'merk_kendaraan' => $merk_kendaraan,
             'nomor_kendaraan' => $nomor_kendaraan,
             'pengguna' => $pengguna,
             'latitude' =>$latitude,
             'longitude' =>$longitude,
-            'radius' =>$radius
+            'batas' =>$batas
             
             
         );
 
         $where = array(
-            'id_kendaraan' => $id_kendaraan
+            'id_lokasi' => $id_lokasi
         );
 
-        $this->Data_kendaraan_model->update_data($where,$data,'kendaraan');
-        redirect('Data_kendaraan');
+        $this->rute_model->update_data($where,$data,'lokasi');
+        redirect('rute');
     }
 
-    public function edit($id_kendaraan){
-        $where = array('id_kendaraan' => $id_kendaraan);
-        $data['kendaraan'] = $this->Data_kendaraan_model->edit_data($where, 'kendaraan')->result();
-        $this->template->views('crud/edit_kendaraan',$data);
+    public function edit($id_lokasi){
+        $where = array('id_lokasi' => $id_lokasi);
+        $data['lokasi'] = $this->rute_model->edit_data($where, 'lokasi')->result();
+        $this->template->views('crud/edit_rute',$data);
     }
-    public function hapus($id_kendaraan){
-        $where = array('id_kendaraan' => $id_kendaraan);
-        $this->Data_kendaraan_model->hapus_data($where,'kendaraan');
-        redirect('Data_kendaraan/index');
+    public function hapus($id_lokasi){
+        $where = array('id_lokasi' => $id_lokasi);
+        $this->rute_model->hapus_data($where,'lokasi');
+        redirect('rute/index');
     }
 }
 
