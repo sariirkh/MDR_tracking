@@ -24,6 +24,7 @@
         <thead>
           <tr>
             <th scope="col">No.</th>
+            <th scope="col">ID Kendaraan</th>
             <th scope="col">Nama Kendaraan</th>
             <th scope="col">Pengguna</th>
             <th scope="col">Lokasi</th>
@@ -36,6 +37,7 @@
         <tfoot>
           <tr>
           <th scope="col">No.</th>
+            <th scope="col">ID Kendaraan</th>
             <th scope="col">Nama Kendaraan</th>
             <th scope="col">Pengguna</th>
             <th scope="col">Lokasi</th>
@@ -46,13 +48,15 @@
           </tr>
         </tfoot>
         <tbody>
+        
         <?php $no =1;
             foreach($lokasi as $baris){
         ?>
         <tr><td><?php echo $no++;?></td>
-             <td><?php echo $nama_kendaraan.'('.$nomor_kendaraan.')';?></td>
+             <td><?php echo $baris->id_kendaraan;?></td>
+             <td><?php echo $baris->merk_kendaraan;?> ( <?php echo $baris->nomor_kendaraan;?> ) </td>
              <td><?php echo $baris->pengguna;?></td>
-             <td><?php echo $baris->lokasi;?></td>
+             <td><?php echo $baris->nama_lokasi;?></td>
              <td><?php echo $baris->batas;?></td>
            
             <td>
