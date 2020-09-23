@@ -11,7 +11,7 @@
 
  <div class="form-group">
  <label>Nama Kendaraan</label>
- <select class="form-control " name="kendaraan" id="kendaraan" placeholder="Pilih Kendaraan">
+ <select class="form-control " name="id_kendaraan" id="id_kendaraan" placeholder="Pilih Kendaraan">
  <?php
 $kon = mysqli_connect("localhost",'root',"","trackingmdr");
 if (!$kon){
@@ -20,9 +20,9 @@ if (!$kon){
 ?>
 
 <?php if($id_lokasi == null) :?>
-	<option value="0"> Pilih Kendaraan </option> 
+	<option value="0"> Pilih Kendaraan </option>
 <?php else : ?>
-	<option value="<?php echo $merk_kendaraan ?>"><?php echo $nomor_kendaraan.' - '.$pengguna; ?></option> 
+	<option value="<?php echo $id_kendaraan ?>"><?php echo $merk_kendaraan.$nomor_kendaraan.' - '.$pengguna; ?></option> 
 <?php endif; ?>
 
 
@@ -51,7 +51,7 @@ if (isset($_GET['kendaraan'])) {
 </select>
 
 <label>Nama Lokasi</label>
-    <input type="text" class="form-control form-control-user" id="lokasi"name="lokasi" placeholder="Masukkan Nama Lokasi " require>
+    <input type="text" class="form-control form-control-user" id="nama_lokasi"name="nama_lokasi" placeholder="Masukkan Nama Lokasi " require>
    
     <label>Latitude</label>
     <input type="text" class="form-control form-control-user" id="latitude"name="latitude" placeholder="Latitude " require>
