@@ -1,8 +1,10 @@
 <?php
-class Saran_model extends CI_Model{
+class Data_kendaraan_model extends CI_Model{
+    
     function getAll(){
         $this->db->select('*');
-        $this->db->from('tbl_saran');
+        $this->db->from('lokasi');
+        $this->db->join('kendaraan','lokasi.id_lokasi=kendaraan.id_kendaraan');
         $query = $this->db->get();
         return $query;
     }
@@ -10,11 +12,5 @@ class Saran_model extends CI_Model{
         $this->db->insert($table,$data);
         
     }
-    
-    function hapus_data($where,$table){
-        $this->db->where($where);
-        $this->db->delete($table);
-    }
-
+  
 }
-?>

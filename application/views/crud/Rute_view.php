@@ -16,7 +16,7 @@
 <div class="card shadow mb-4">
 <div class="card-header py-3">
 <h6 class="m-0 font-weight-bold text-primary datatable">Rute</h6>
-<a href="<?php echo base_url('Data_kendaraan/tambah')?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Data</button></a>
+<a href="<?php echo base_url('rute/tambah')?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Data</button></a>
 </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -47,13 +47,13 @@
         </tfoot>
         <tbody>
         <?php $no =1;
-            foreach($kendaraan as $baris){
+            foreach($rute as $baris){
         ?>
         <tr><td><?php echo $no++;?></td>
              <td><?php echo $baris->id_kendaraan;?></td>
              <td><?php echo $baris->pengguna;?></td>
              <td><?php echo $baris->lokasi;?></td>
-             <td><?php echo $baris->Batas_radius;?></td>
+             <td><?php echo $baris->batas_radius;?></td>
            
             <td>
             <?php

@@ -23,11 +23,12 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th scope="col">No.</th>
+          <th scope="col">No.</th>
             <th scope="col">Id.Kendaraan</th>
             <th scope="col">Jenis Kendaraan</th>
             <th scope="col">Merk Kendaraan</th>
             <th scope="col">Nomor Kendaraan</th>
+            <th scope="col">Pengguna</th>
             <th scope="col">
               <center><span>Action</span></center>
             </th>
@@ -40,6 +41,7 @@
             <th scope="col">Jenis Kendaraan</th>
             <th scope="col">Merk Kendaraan</th>
             <th scope="col">Nomor Kendaraan</th>
+            <th scope="col">Pengguna</th>
             <th scope="col">
               <center><span>Action</span></center>
             </th>
@@ -51,9 +53,11 @@
         ?>
         <tr><td><?php echo $no++;?></td>
              <td><?php echo $baris->id_kendaraan;?></td>
+             
              <td><?php echo $baris->jenis_kendaraan;?></td>
              <td><?php echo $baris->merk_kendaraan;?></td>
              <td><?php echo $baris->nomor_kendaraan;?></td>
+             <td><?php echo $baris->pengguna;?></td>
            
             <td>
             <?php

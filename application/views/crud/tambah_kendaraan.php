@@ -15,6 +15,7 @@
       <div>
       <input type="text" class="form-control form-control-user" id="merk_kendaraan" name="merk_kendaraan" placeholder="Masukkan Merk Kendaraan "  require >
       <input type="text" class="form-control form-control-user" id="nomor_kendaraan" name="nomor_kendaraan" placeholder="Masukkan Nomor Kendaraan "  require >
+      <input type="text" class="form-control form-control-user" id="pengguna" name="pengguna" placeholder="Masukkan Nama Pengguna "  require >
     </div>
     
     

@@ -17,16 +17,20 @@ class Data_kendaraan extends CI_Controller{
 
     public function input(){
         $id_kendaraan = $this->input->post('id_kendaraan');
+       
         $jenis_kendaraan = $this->input->post('jenis_kendaraan');
         $merk_kendaraan= $this->input->post('merk_kendaraan');
         $nomor_kendaraan= $this->input->post('nomor_kendaraan');
+        $pengguna = $this->input->post('pengguna');
         
 
         $data = array(
             'id_kendaraan' => $id_kendaraan,
+      
             'jenis_kendaraan' => $jenis_kendaraan,
             'merk_kendaraan' => $merk_kendaraan,
-            'nomor_kendaraan' => $nomor_kendaraan
+            'nomor_kendaraan' => $nomor_kendaraan,
+            'pengguna' => $pengguna
            
         );
 
@@ -42,16 +46,20 @@ class Data_kendaraan extends CI_Controller{
 
     public function update(){
         $id_kendaraan = $this->input->post('id_kendaraan');
+        
         $jenis_kendaraan = $this->input->post('jenis_kendaraan');
         $merk_kendaraan= $this->input->post('merk_kendaraan');
         $nomor_kendaraan= $this->input->post('nomor_kendaraan');
+        $pengguna = $this->input->post('pengguna');
         
 
         $data = array(
             'id_kendaraan' => $id_kendaraan,
+            
             'jenis_kendaraan' => $jenis_kendaraan,
             'merk_kendaraan' => $merk_kendaraan,
-            'nomor_kendaraan' => $nomor_kendaraan
+            'nomor_kendaraan' => $nomor_kendaraan,
+            'pengguna'=> $pengguna
             
             
         );
