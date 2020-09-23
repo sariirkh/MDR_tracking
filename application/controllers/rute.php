@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Data_kendaraan extends CI_Controller{
+class rute extends CI_Controller{
     function __construct(){
         parent::__construct();
         $this->load->model('rute_model');
@@ -11,7 +11,7 @@ class Data_kendaraan extends CI_Controller{
         // if($this->session->userdata('status') != "login"){
         //     redirect(base_url('admin/login_admin'));
         // }
-        $data['lokasi'] = $this->Data_kendaraan_model->getAll()->result();
+        $data['lokasi'] = $this->rute_model->getAll()->result();
          $this->template->views('crud/Rute_view', $data);
     }
 

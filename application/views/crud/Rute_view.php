@@ -53,7 +53,7 @@
              <td><?php echo $baris->id_kendaraan;?></td>
              <td><?php echo $baris->pengguna;?></td>
              <td><?php echo $baris->lokasi;?></td>
-             <td><?php echo $baris->batas_radius;?></td>
+             <td><?php echo $baris->batas;?></td>
            
             <td>
             <?php

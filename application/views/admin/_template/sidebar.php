@@ -34,7 +34,7 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url('Data_barang');?>">
+  <a class="nav-link" href="<?php echo base_url('rute');?>">
     <i class="fas fa-fw fa fa-map-marker"></i>
     <span>Rute</span></a>
 </li>

@@ -1,5 +1,5 @@
 <?php
-class Data_kendaraan_model extends CI_Model{
+class rute_model extends CI_Model{
     
     function getAll(){
         $this->db->select('*');
