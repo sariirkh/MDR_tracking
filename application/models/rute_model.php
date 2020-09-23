@@ -12,5 +12,9 @@ class rute_model extends CI_Model{
         $this->db->insert($table,$data);
         
     }
-  
+  //function get_kendaraan($id_kendaraan){
+    //  $query=this->db->get_where('kendaraan', array('id_kendaraan'->$id_kendaraan));
+     // return $query;
+      
+ // }
 }

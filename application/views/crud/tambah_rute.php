@@ -8,18 +8,18 @@
  <form class="user" action="<?php echo base_url('rute/input');?>" method="post"> <!--aksi diarahkan ke function update di controller mahasiswa -->
  <div class="form-group">
  <label>Nama Kendaraan</label>
- <select class="form-control" name="kendaraan" id="kendaraan">
-											<?php if($id_lokasi == null) :?>
-												<option value="0">-- Pilih Kendaraan --</option>
-												<?php else : ?>
-													<option value="<?php echo $kendaraan ?>"><?php echo $merk_kendaraan.' - '.$pengguna; ?></option>
-												<?php endif; ?>
+ <select class="form-control form-control-user " name="kendaraan" id="kendaraan" placeholder="Pilih Kendaraan">
+											<?php //if($id_lokasi == null) :?>
+												<!-- <option value="0"> Pilih Kendaraan </option> -->
+												<?php // else : ?>
+													<!-- <option value="<?php //echo $kendaraan ?>"><?php //echo $merk_kendaraan.' - '.$pengguna; ?></option> -->
+												<?php //endif; ?>
 												<?php
-												$data = $dao->view('kendaraan');
-												foreach ($data as $value) {
-													echo '<option value="'.$value['id_kendaraan'].'">'.$value['merk_kendaraan'].' ('.$value['nomor_kendaraan'].') - '.$value['pengguna'].'</option>';
-												}
-												?>
+												//$data = $dao->view('kendaraan');
+												foreach ($kendaraan as $row) ?>
+												
+												<option value="<?php echo $row-> id_kendaraan; ?>" > <?php echo $row-> merk_kendaraan; ?> <?php echo $row-> nomor_kendaraan; ?> <?php echo $row-> pengguna; ?> </option>
+												
 											</select>
 
 <label>Nama Lokasi</label>
@@ -33,8 +33,8 @@
    
     <label>Batas</label>
     <div class="input-group">
-	<input type="text" id="radius" value="<?php echo $radius ?>" name="radius" class="form-control" placeholder="Radius" aria-describedby="basic-addon2">
-	<span class="input-group-addon" id="basic-addon2">Km</span>
+    <input type="text" class="form-control form-control-user" id="batas"name="batas" placeholder="batas " require>
+	
 	</div>
 
 

@@ -15,6 +15,13 @@ class rute extends CI_Controller{
          $this->template->views('crud/Rute_view', $data);
     }
 
+   // function get_kendaraan (){
+       // $id_kendaraan= this->input->post('id_kendaraan', true);
+       // $data=this->rute_model->get_kendaraan($id_kendaraan)->result();
+        //echo json_encode($data);
+
+    //}
+
     public function input(){
         $id_lokasi = $this->input->post('id_lokasi');
         $nama_lokasi = $this->input->post('nama_lokasi');
@@ -40,7 +47,7 @@ class rute extends CI_Controller{
         );
 
         $this->rute_model->input_data($data, 'lokasi');
-        redirect('Rute/index');
+        redirect('rute/index');
     
 
     }
