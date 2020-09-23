@@ -16,6 +16,7 @@ class rute extends CI_Controller{
     }
 
     public function input(){
+        $id_lokasi = $this->input->post('id_lokasi');
         $nama_lokasi = $this->input->post('nama_lokasi');
         $merk_kendaraan= $this->input->post('merk_kendaraan');
         $nomor_kendaraan= $this->input->post('nomor_kendaraan');
@@ -26,6 +27,7 @@ class rute extends CI_Controller{
         
 
         $data = array(
+            'id_lokasi' => $id_lokasi,
             'nama_lokasi' => $nama_lokasi,
             'merk_kendaraan' => $merk_kendaraan,
             'nomor_kendaraan' => $nomor_kendaraan,
