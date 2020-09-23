@@ -16,7 +16,7 @@
 <div class="card shadow mb-4">
 <div class="card-header py-3">
 <h6 class="m-0 font-weight-bold text-primary datatable">Rute</h6>
-<a href="<?php echo base_url('rute/tambah')?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Rute</button></a>
+<a href="<?php echo base_url('rute/tambah');?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Rute</button></a>
 </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -49,22 +49,23 @@
         </tfoot>
         <tbody>
         
-        <?php $no =1;
+        <?php 
+        $no =1;
             foreach($lokasi as $baris){
         ?>
         <tr><td><?php echo $no++;?></td>
-             <td><?php echo $baris->id_kendaraan;?></td>
-             <td><?php echo $baris->merk_kendaraan;?> ( <?php echo $baris->nomor_kendaraan;?> ) </td>
-             <td><?php echo $baris->pengguna;?></td>
-             <td><?php echo $baris->nama_lokasi;?></td>
-             <td><?php echo $baris->batas;?></td>
+             <td><?php echo $baris->id_kendaraan_user;?></td>
+             <td><?php echo $baris->merek_kendaraan;?> ( <?php echo $baris->no_kendaraan;?> ) </td>
+             <td><?php echo $baris->nama_pengguna;?></td>
+             <td><?php echo $baris->tempat_lokasi;?></td>
+             <td><?php echo $baris->batas_radius;?></td>
            
             <td>
             <?php
                    
-                   echo '<a href="'.base_url('rute/edit/'.$baris->id_lokasi).'" class="btn btn-success btn-icon-split"><i class="fas fa-edit" style="padding: 5px;"></i></a>';
+                   echo '<a href="'.base_url('rute/edit/'.$baris->lokasi_id).'" class="btn btn-success btn-icon-split"><i class="fas fa-edit" style="padding: 5px;"></i></a>';
                    echo "  ";
-                echo '<a href="'.base_url('rute/hapus/'.$baris->id_lokasi).'" class="btn btn-danger btn-icon-split"><i class="fas fa-trash" style="padding: 5px;"></i></a>';
+                echo '<a href="'.base_url('rute/hapus/'.$baris->lokasi_id).'" class="btn btn-danger btn-icon-split"><i class="fas fa-trash" style="padding: 5px;"></i></a>';
              
             ?>
             

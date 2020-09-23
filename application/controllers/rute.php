@@ -11,7 +11,7 @@ class rute extends CI_Controller{
         // if($this->session->userdata('status') != "login"){
         //     redirect(base_url('admin/login_admin'));
         // }
-        $data['lokasi'] = $this->rute_model->getAll()->result();
+        $data['lokasi'] = $this->db->query("SELECT k.id_kendaraan AS id_kendaraan_user, k.merk_kendaraan AS merek_kendaraan, k.nomor_kendaraan AS no_kendaraan, k.pengguna AS nama_pengguna, l.nama_lokasi AS tempat_lokasi, l.batas AS batas_radius, l.id_lokasi AS lokasi_id FROM kendaraan k, lokasi l WHERE k.id_kendaraan = l.id_kendaraan")->result();
          $this->template->views('crud/Rute_view', $data);
     }
 
