@@ -9,18 +9,23 @@
  <div class="form-group">
  <label>Nama Kendaraan</label>
  <select class="form-control form-control-user " name="kendaraan" id="kendaraan" placeholder="Pilih Kendaraan">
-											<?php //if($id_lokasi == null) :?>
-												<!-- <option value="0"> Pilih Kendaraan </option> -->
-												<?php // else : ?>
-													<!-- <option value="<?php //echo $kendaraan ?>"><?php //echo $merk_kendaraan.' - '.$pengguna; ?></option> -->
-												<?php //endif; ?>
-												<?php
-												//$data = $dao->view('kendaraan');
-												foreach ($kendaraan as $row) ?>
-												
-												<option value="<?php echo $row-> id_kendaraan; ?>" > <?php echo $row-> merk_kendaraan; ?> <?php echo $row-> nomor_kendaraan; ?> <?php echo $row-> pengguna; ?> </option>
-												
-											</select>
+	<?php if($id_lokasi == null) :?>
+		<option value="0"> Pilih Kendaraan </option> 
+	<?php else : ?>
+		<option value="<?php echo $kendaraan ?>"><?php echo $merk_kendaraan.' - '.$pengguna; ?></option> 
+	<?php endif; ?>
+	<?php 
+	$sql="select * from kendaraan";
+	
+	$row=mysqli_query($kon,$sql);
+    $no=0;
+    while ($data = mysqli_fetch_array($row)) {
+    $no++;
+	?>
+	<?php foreach ($kendaraan as $row) ?>											
+	<option value="<?php echo $row->id_kendaraan;?>"> <?php echo $row->merk_kendaraan;?> <?php echo $row->nomor_kendaraan;?> <?php echo $row->pengguna;?> </option>												
+	<?php } ?>
+</select>
 
 <label>Nama Lokasi</label>
     <input type="text" class="form-control form-control-user" id="lokasi"name="lokasi" placeholder="Masukkan Nama Lokasi " require>
