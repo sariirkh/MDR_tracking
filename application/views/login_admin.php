@@ -22,7 +22,7 @@
 
 										<!-- email -->
 										<div class="form-group">
-										<input type="text" class="form-control form-control-user" id="username" aria-describedby="usernmae" placeholder="Username..." name="txt_user">
+										<input type="text" class="form-control form-control-user" id="username" aria-describedby="username" placeholder="Username..." name="txt_user">
 											<div class="invalid-feedback">
 												Harap isi alamat email anda.
 											</div>
