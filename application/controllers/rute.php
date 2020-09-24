@@ -15,6 +15,10 @@ class rute extends CI_Controller{
          $this->template->views('crud/Rute_view', $data);
     }
 
+    public function map(){
+        $this->load->view('crud/tambah_rute');
+    }
+
    // function get_kendaraan (){
        // $id_kendaraan= this->input->post('id_kendaraan', true);
        // $data=this->rute_model->get_kendaraan($id_kendaraan)->result();
