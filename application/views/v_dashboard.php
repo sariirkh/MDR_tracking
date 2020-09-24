@@ -86,10 +86,11 @@
       </div>
     </div>
   </div>
-
+</div>
+       </div>
 
 <!-- leaflet map -->
-<div id="mapid" style="width: 75%; height: 300px;" >
+<div id="mapid" style="width: 100%; height: 500px;" >
 <link rel="stylesheet" href="<?= base_url(); ?>/asset/leaflet/leaflet.css" />
 <script src="<?= base_url(); ?>/asset/leaflet/leaflet.js"></script>
  
