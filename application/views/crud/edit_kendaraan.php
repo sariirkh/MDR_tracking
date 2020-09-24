@@ -7,6 +7,7 @@
      <?php foreach($kendaraan as $baris){ ?>
  <form class="user" action="<?php echo base_url('Data_kendaraan/update');?>" method="post"> <!--aksi diarahkan ke function update di controller mahasiswa -->
  <div class="form-group">
+      <input type="hidden" name="id_admin" value="<?php echo $baris->id_kendaraan; ?>">
       <input type="text" class="form-control form-control-user" id="nama_kendaraan"name="nama_kendaraan" placeholder="Masukkan Nama Kendaraan " require>
     </div>
     <div class="form-group">

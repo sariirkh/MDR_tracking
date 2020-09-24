@@ -57,24 +57,27 @@
              <td><?php echo $baris->waktu;?></td>
              <td><?php echo $baris->merk_kendaraan;?> ( <?php echo $baris->nomor_kendaraan;?> )</td>
              <td><?php echo $baris->pengguna;?></td>
-             <td><?php echo $baris->nomor_kendaraan;?></td>
              <td><?php echo $baris->nama_lokasi;?></td>
              <td><?php echo $baris->jarak_now;?> km</td>
-             <?php if ($value['status'] == 'Di Jalan'): ?>
-				<td><span class="badge" style="background-color: blue;"><?php echo $value['status'] ?></span></td>
-			<?php endif ?>
-			<?php if ($value['status'] == 'Sudah sampai'): ?>
-				<td><span class="badge" style="background-color: red;color:white;"><?php echo $value['status'] ?></span></td>
-			<?php endif ?>
-            <td>
-            <?php
-                   
-                   echo '<a href="'.base_url('Data_Kendaraan/edit/'.$baris->id_kendaraan).'" class="btn btn-success btn-icon-split"><i class="fas fa-edit" style="padding: 5px;"></i></a>';
-                   echo "  ";
-                echo '<a href="'.base_url('Data_Kendaraan/hapus/'.$baris->id_kendaraan).'" class="btn btn-danger btn-icon-split"><i class="fas fa-trash" style="padding: 5px;"></i></a>';
              
-            ?>
-            
+             <td>
+             <?php            
+							if($baris->status=='di jalan'){
+						 ?>
+              <a>Sedang di jalan</a>
+						 <?php
+              } 
+              else{
+							echo "Sudah sampai";
+						 ?>
+						 <?php
+						 }?>
+
+             </td>
+             
+            <td>
+                   <a class="small" href="<?php echo base_url('detail_history/map')?>">detail</a>
+                   
             </td>
         </tr>
             <?php }?>
