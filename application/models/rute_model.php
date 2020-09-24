@@ -20,6 +20,10 @@ class rute_model extends CI_Model{
         $this->db->where($where);
         $this->db->delete($table);
     }
+    function update_data($where, $data, $table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
   //function get_kendaraan($id_kendaraan){
     //  $query=this->db->get_where('kendaraan', array('id_kendaraan'->$id_kendaraan));
      // return $query;

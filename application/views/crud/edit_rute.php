@@ -4,14 +4,14 @@
  <div class="text-center">
  <h1 class="h4 text-gray-900 mb-4">Edit Request</h1>
  </div>
-    
- <form class="user" action="<?php echo base_url('rute/input');?>" method="post"> <!--aksi diarahkan ke function update di controller mahasiswa -->
+
+ <form class="user" action="<?php echo base_url('rute/update');?>" method="post"> <!--aksi diarahkan ke function update di controller mahasiswa -->
  
-     <input type="hidden" class="form-control form-control-user" id="lokasi"name="lokasi" placeholder="Masukkan Id Lokasi " require>
+  <input type="hidden" class="form-control form-control-user" id="id_lokasi"name="id_lokasi" placeholder="Masukkan Id Lokasi " require>
 
  <div class="form-group">
  <label>Nama Kendaraan</label>
- <select class="form-control " name="id_kendaraan" id="id_kendaraan" placeholder="Pilih Kendaraan">
+ <select class="form-control " name="id_kendaraan" id="id_kendaraan" placeholder="Pilih Kendaraan" >
  <?php
 $kon = mysqli_connect("localhost",'root',"","trackingmdr");
 if (!$kon){
@@ -51,7 +51,7 @@ if (isset($_GET['kendaraan'])) {
 </select>
 
 <label>Nama Lokasi</label>
-    <input type="text" class="form-control form-control-user" id="nama_lokasi"name="nama_lokasi" placeholder="Masukkan Nama Lokasi " require>
+    <input type="text" class="form-control form-control-user" id="nama_lokasi"name="nama_lokasi" placeholder="Masukkan Nama Lokasi "value="<?php echo $data['nama_lokasi'];?>" require>
  
 	</div>
 
@@ -59,10 +59,9 @@ if (isset($_GET['kendaraan'])) {
     
   </div>
     
-    <input type="submit" class="btn btn-success btn-icon-split" name="submit" value="Tambah">
+    <input type="submit" class="btn btn-success btn-icon-split" name="submit" value="update">
     </form><hr>
     <div class="text-center"><a class="small" href="<?php echo base_url('rute')?>">Kembali</a>
   </div>
  </div>
  </div>
-</div>

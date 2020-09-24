@@ -64,6 +64,6 @@ if (isset($_GET['kendaraan'])) {
   </div>
  </div>
  </div>
-</div>
+
 
 

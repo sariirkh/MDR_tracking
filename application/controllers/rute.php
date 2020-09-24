@@ -55,20 +55,17 @@ class rute extends CI_Controller{
     }
 
     public function update(){
+        $id_lokasi = $this->input->post('id_lokasi');
+        $id_kendaraan = $this->input->post('id_kendaraan');
         $nama_lokasi = $this->input->post('nama_lokasi');
-        $merk_kendaraan= $this->input->post('merk_kendaraan');
-        $nomor_kendaraan= $this->input->post('nomor_kendaraan');
-        $pengguna = $this->input->post('pengguna');
         // $latitude=$this->input->post('latitude');
         // $longitude=$this->input->post('longitude');
         // $batas=$this->input->post('batas');
         
 
         $data = array(
+            'id_kendaraan' => $id_kendaraan,
             'nama_lokasi' => $nama_lokasi,
-            'merk_kendaraan' => $merk_kendaraan,
-            'nomor_kendaraan' => $nomor_kendaraan,
-            'pengguna' => $pengguna,
             // 'latitude' =>$latitude,
             // 'longitude' =>$longitude,
             // 'batas' =>$batas
@@ -86,7 +83,7 @@ class rute extends CI_Controller{
 
     public function edit($id_lokasi){
         $where = array('id_lokasi' => $id_lokasi);
-        $data['lokasi'] = $this->rute_model->edit_data($where, 'lokasi')->result();
+        $data['tempat'] = $this->rute_model->edit_data($where, 'lokasi')->result();
         $this->template->views('crud/edit_rute',$data);
     }
     public function hapus($id_lokasi){
