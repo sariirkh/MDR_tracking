@@ -12,6 +12,14 @@ class rute_model extends CI_Model{
         $this->db->insert($table,$data);
         
     }
+    function edit_data($where,$table){
+        return $this->db->get_where($table,$where);
+    }
+
+    function hapus_data($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
   //function get_kendaraan($id_kendaraan){
     //  $query=this->db->get_where('kendaraan', array('id_kendaraan'->$id_kendaraan));
      // return $query;
