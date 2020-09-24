@@ -6,6 +6,9 @@
  </div>
     
  <form class="user" action="<?php echo base_url('rute/input');?>" method="post"> <!--aksi diarahkan ke function update di controller mahasiswa -->
+ 
+     <input type="hidden" class="form-control form-control-user" id="lokasi"name="lokasi" placeholder="Masukkan Id Lokasi " require>
+
  <div class="form-group">
  <label>Nama Kendaraan</label>
  <select class="form-control " name="kendaraan" id="kendaraan" placeholder="Pilih Kendaraan">
@@ -21,6 +24,7 @@ if (!$kon){
 <?php else : ?>
 	<option value="<?php echo $merk_kendaraan ?>"><?php echo $nomor_kendaraan.' - '.$pengguna; ?></option> 
 <?php endif; ?>
+
 
 <?php
 $sql="select * from kendaraan";

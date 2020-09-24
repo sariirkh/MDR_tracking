@@ -24,10 +24,8 @@ class rute extends CI_Controller{
 
     public function input(){
         $id_lokasi = $this->input->post('id_lokasi');
+        $id_kendaraan = $this->input->post('id_kendaraan');
         $nama_lokasi = $this->input->post('nama_lokasi');
-        $merk_kendaraan= $this->input->post('merk_kendaraan');
-        $nomor_kendaraan= $this->input->post('nomor_kendaraan');
-        $pengguna = $this->input->post('pengguna');
         $latitude=$this->input->post('latitude');
         $longitude=$this->input->post('longitude');
         $batas=$this->input->post('batas');
@@ -35,10 +33,8 @@ class rute extends CI_Controller{
 
         $data = array(
             'id_lokasi' => $id_lokasi,
+            'id_kendaraan' => $id_kendaraan,
             'nama_lokasi' => $nama_lokasi,
-            'merk_kendaraan' => $merk_kendaraan,
-            'nomor_kendaraan' => $nomor_kendaraan,
-            'pengguna' => $pengguna,
             'latitude' =>$latitude,
             'longitude' =>$longitude,
             'batas' =>$batas
