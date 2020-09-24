@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2020 at 04:51 AM
+-- Generation Time: Sep 24, 2020 at 10:31 AM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -32,8 +32,19 @@ CREATE TABLE `kendaraan` (
   `id_kendaraan` int(11) NOT NULL,
   `jenis_kendaraan` varchar(255) NOT NULL,
   `merk_kendaraan` varchar(255) NOT NULL,
-  `nomor_kendaraan` varchar(255) NOT NULL
+  `nomor_kendaraan` varchar(255) NOT NULL,
+  `pengguna` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kendaraan`
+--
+
+INSERT INTO `kendaraan` (`id_kendaraan`, `jenis_kendaraan`, `merk_kendaraan`, `nomor_kendaraan`, `pengguna`) VALUES
+(1, 'mobil', 'toyota', 'p 3047 ko', 'Sari'),
+(2, 'mobil', 'toyota', 'P 4301 MD', 'Ella'),
+(3, 'mobil', 'toyota', 'P 2076 YT', 'Sari'),
+(4, 'mobil', 'toyota', 'P 5628 PT', 'Nando');
 
 -- --------------------------------------------------------
 
@@ -56,7 +67,8 @@ CREATE TABLE `login_admin` (
 
 INSERT INTO `login_admin` (`id_admin`, `nama_admin`, `user_admin`, `password`, `email`, `level`) VALUES
 (1, 'sari', 'sari', 'sari', 'sariirkh@gmail.com', 'admin'),
-(2, 'Ella why', 'ella', 'ella', 'Ellawhy@gmail.com', 'admin');
+(2, 'Ella why', 'ella', 'ella', 'Ellawhy@gmail.com', 'admin'),
+(6, 'HRD', 'hrd', 'hrd', 'hrd@gmail.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -88,11 +100,17 @@ CREATE TABLE `login_user` (
 CREATE TABLE `lokasi` (
   `id_lokasi` int(11) NOT NULL,
   `id_kendaraan` int(11) NOT NULL,
-  `nama_lokasi` varchar(255) NOT NULL,
-  `latitude` varchar(255) NOT NULL,
-  `longitude` varchar(255) NOT NULL,
-  `batas` double NOT NULL
+  `nama_lokasi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lokasi`
+--
+
+INSERT INTO `lokasi` (`id_lokasi`, `id_kendaraan`, `nama_lokasi`) VALUES
+(1, 1, 'Mangli'),
+(12, 2, 'Jember'),
+(13, 3, 'Bangsal');
 
 -- --------------------------------------------------------
 
@@ -109,6 +127,13 @@ CREATE TABLE `riwayat` (
   `jarak_now` double NOT NULL,
   `status` enum('di jalan','sudah sampai') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `riwayat`
+--
+
+INSERT INTO `riwayat` (`id_riwayat`, `waktu`, `id_lokasi`, `latitude_now`, `longitude_now`, `jarak_now`, `status`) VALUES
+(1, '2020-09-24 06:39:27', 2, '5', '2', 4, 'di jalan');
 
 --
 -- Indexes for dumped tables
@@ -146,13 +171,13 @@ ALTER TABLE `lokasi`
 -- AUTO_INCREMENT for table `kendaraan`
 --
 ALTER TABLE `kendaraan`
-  MODIFY `id_kendaraan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kendaraan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `login_admin`
 --
 ALTER TABLE `login_admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `login_user`
@@ -164,7 +189,7 @@ ALTER TABLE `login_user`
 -- AUTO_INCREMENT for table `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
