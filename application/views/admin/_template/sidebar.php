@@ -28,7 +28,7 @@
 <!-- Nav Item - Pages Collapse Menu -->
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url('Admin');?>">
+  <a class="nav-link" href="<?php echo base_url('dashboard');?>">
     <i class="fas fa-fw fa fa-home"></i>
     <span>Dashboard</span></a>
 </li>
