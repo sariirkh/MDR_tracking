@@ -23,7 +23,7 @@ class Login extends CI_Controller{
             }
             $this->session->set_userdata('session_admin',$user);
             $this->session->set_userdata('session_level',$level);
-            redirect('admin');
+            redirect('dashboard');
         }else{
             $this->load->view('login_admin');
             // echo "username atau password salah";

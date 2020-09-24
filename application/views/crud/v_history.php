@@ -3,7 +3,7 @@
 // $getGrup = $this->session->userdata('session_grup');
 ?>
 <head>
-	<title>Data Kendaraan</title>
+	<title>History</title>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-1.7.1.min.js"></script>
@@ -15,7 +15,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 <div class="card-header py-3">
-<h6 class="m-0 font-weight-bold text-primary datatable">Update Rute</h6>
+<h6 class="m-0 font-weight-bold text-primary datatable">History</h6>
 
 </div>
   <div class="card-body">

@@ -28,7 +28,6 @@
             <th scope="col">Nama Kendaraan</th>
             <th scope="col">Pengguna</th>
             <th scope="col">Lokasi</th>
-            <th scope="col">Batas/Radius</th>
             <th scope="col">
               <center><span>Action</span></center>
             </th>
@@ -41,7 +40,6 @@
             <th scope="col">Nama Kendaraan</th>
             <th scope="col">Pengguna</th>
             <th scope="col">Lokasi</th>
-            <th scope="col">Batas/Radius</th>
             <th scope="col">
               <center><span>Action</span></center>
             </th>
@@ -58,7 +56,6 @@
              <td><?php echo $baris->merek_kendaraan;?> ( <?php echo $baris->no_kendaraan;?> ) </td>
              <td><?php echo $baris->nama_pengguna;?></td>
              <td><?php echo $baris->tempat_lokasi;?></td>
-             <td><?php echo $baris->batas_radius;?></td>
            
             <td>
             <?php

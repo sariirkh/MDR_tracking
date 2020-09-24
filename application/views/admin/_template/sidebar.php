@@ -46,14 +46,14 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url('Update_rute');?>">
+  <a class="nav-link" href="<?php echo base_url('History');?>">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>History</span></a>
 </li>
 
 
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url('admin/data_admin');?>">
+  <a class="nav-link" href="<?php echo base_url('admin');?>">
     <i class="fas fa-fw fa fa-users"></i>
     <span>Data Admin</span></a>
 </li>

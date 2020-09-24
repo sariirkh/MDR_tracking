@@ -1,5 +1,5 @@
 <?php
-class Update_rute_model extends CI_Model{
+class History_model extends CI_Model{
     
     function getAll(){
         $this->db->select('*');

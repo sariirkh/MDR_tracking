@@ -52,17 +52,7 @@ if (isset($_GET['kendaraan'])) {
 
 <label>Nama Lokasi</label>
     <input type="text" class="form-control form-control-user" id="nama_lokasi"name="nama_lokasi" placeholder="Masukkan Nama Lokasi " require>
-   
-    <label>Latitude</label>
-    <input type="text" class="form-control form-control-user" id="latitude"name="latitude" placeholder="Latitude " require>
-   
-    <label>Longitude</label>
-    <input type="text" class="form-control form-control-user" id="longitude"name="longitude" placeholder="Longitude " require>
-   
-    <label>Batas</label>
-    <div class="input-group">
-    <input type="text" class="form-control form-control-user" id="batas"name="batas" placeholder="batas " require>
-	
+ 
 	</div>
 
 

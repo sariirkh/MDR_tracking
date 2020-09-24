@@ -11,7 +11,7 @@ class rute extends CI_Controller{
         // if($this->session->userdata('status') != "login"){
         //     redirect(base_url('admin/login_admin'));
         // }
-        $data['lokasi'] = $this->db->query("SELECT k.id_kendaraan AS id_kendaraan_user, k.merk_kendaraan AS merek_kendaraan, k.nomor_kendaraan AS no_kendaraan, k.pengguna AS nama_pengguna, l.nama_lokasi AS tempat_lokasi, l.batas AS batas_radius, l.id_lokasi AS lokasi_id FROM kendaraan k, lokasi l WHERE k.id_kendaraan = l.id_kendaraan")->result();
+        $data['lokasi'] = $this->db->query("SELECT k.id_kendaraan AS id_kendaraan_user, k.merk_kendaraan AS merek_kendaraan, k.nomor_kendaraan AS no_kendaraan, k.pengguna AS nama_pengguna, l.nama_lokasi AS tempat_lokasi,  l.id_lokasi AS lokasi_id FROM kendaraan k, lokasi l WHERE k.id_kendaraan = l.id_kendaraan")->result();
          $this->template->views('crud/Rute_view', $data);
     }
 
@@ -28,18 +28,18 @@ class rute extends CI_Controller{
         $id_lokasi = $this->input->post('id_lokasi');
         $id_kendaraan = $this->input->post('id_kendaraan');
         $nama_lokasi = $this->input->post('nama_lokasi');
-        $latitude=$this->input->post('latitude');
-        $longitude=$this->input->post('longitude');
-        $batas=$this->input->post('batas');
+        // $latitude=$this->input->post('latitude');
+        // $longitude=$this->input->post('longitude');
+        // $batas=$this->input->post('batas');
         
 
         $data = array(
             'id_lokasi' => $id_lokasi,
             'id_kendaraan' => $id_kendaraan,
             'nama_lokasi' => $nama_lokasi,
-            'latitude' =>$latitude,
-            'longitude' =>$longitude,
-            'batas' =>$batas
+            // 'latitude' =>$latitude,
+            // 'longitude' =>$longitude,
+            // 'batas' =>$batas
 
            
         );
@@ -59,9 +59,9 @@ class rute extends CI_Controller{
         $merk_kendaraan= $this->input->post('merk_kendaraan');
         $nomor_kendaraan= $this->input->post('nomor_kendaraan');
         $pengguna = $this->input->post('pengguna');
-        $latitude=$this->input->post('latitude');
-        $longitude=$this->input->post('longitude');
-        $batas=$this->input->post('batas');
+        // $latitude=$this->input->post('latitude');
+        // $longitude=$this->input->post('longitude');
+        // $batas=$this->input->post('batas');
         
 
         $data = array(
@@ -69,9 +69,9 @@ class rute extends CI_Controller{
             'merk_kendaraan' => $merk_kendaraan,
             'nomor_kendaraan' => $nomor_kendaraan,
             'pengguna' => $pengguna,
-            'latitude' =>$latitude,
-            'longitude' =>$longitude,
-            'batas' =>$batas
+            // 'latitude' =>$latitude,
+            // 'longitude' =>$longitude,
+            // 'batas' =>$batas
             
             
         );
