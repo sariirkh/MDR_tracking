@@ -21,8 +21,56 @@ class dashboard_model extends CI_Model{
         //$hasil = $this->db->get('kendaraan');
         //return $hasil;
     }
+    public function jum_kendaraan(){   
+        $query = $this->db->get('kendaraan');
+        if($query->num_rows()>0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
-    function tampil_request(){
+    public function jum_request(){   
+        $query = $this->db->get('lokasi');
+        if($query->num_rows()>0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public function jum_update(){   
+        $query = $this->db->get('riwayat');
+        if($query->num_rows()>0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public function jum_pengguna(){   
+        $query = $this->db->get('kendaraan');
+        $this->db->where('pengguna');
+        if($query->num_rows()>0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    /*function tampil_request(){
         $this->db->select('*');
         $this->db->from('lokasi');
         $this->db->where('id_lokasi');
@@ -56,6 +104,6 @@ class dashboard_model extends CI_Model{
         //$this->db->order_by('total', 'desc'); 
         //$hasil = $this->db->get('kendaraan');
         //return $hasil;
-    }
+    }*/
 }
 ?>

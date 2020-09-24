@@ -1,9 +1,9 @@
 
 <html lang="en">
-<!-- <?php 
+<?php 
 // $getUser = $this->session->userdata('session_user');
 // $getGrup = $this->session->userdata('session_grup');
-?> -->
+?>
 <?php echo @$head; ?>
  
 <body id="page-top">
