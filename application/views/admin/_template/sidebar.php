@@ -36,7 +36,7 @@
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('rute');?>">
     <i class="fas fa-fw fa fa-map-marker"></i>
-    <span>Rute</span></a>
+    <span>Request</span></a>
 </li>
 
 <li class="nav-item">
@@ -48,7 +48,7 @@
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('Update_rute');?>">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Update Rute</span></a>
+    <span>History</span></a>
 </li>
 
 

@@ -2,7 +2,7 @@
  <div class="col-lg-7">
  <div class="p-5">
  <div class="text-center">
- <h1 class="h4 text-gray-900 mb-4">Tambah Rute</h1>
+ <h1 class="h4 text-gray-900 mb-4">Tambah Request</h1>
  </div>
     
  <form class="user" action="<?php echo base_url('rute/input');?>" method="post"> <!--aksi diarahkan ke function update di controller mahasiswa -->
@@ -53,20 +53,9 @@ if (isset($_GET['kendaraan'])) {
 <label>Nama Lokasi</label>
     <input type="text" class="form-control form-control-user" id="nama_lokasi"name="nama_lokasi" placeholder="Masukkan Nama Lokasi " require>
    
-    <label>Latitude</label>
-    <input type="text" class="form-control form-control-user" id="latitude"name="latitude" placeholder="Latitude " require>
-   
-    <label>Longitude</label>
-    <input type="text" class="form-control form-control-user" id="longitude"name="longitude" placeholder="Longitude " require>
-   
-    <label>Batas</label>
-    <div class="input-group">
-    <input type="text" class="form-control form-control-user" id="batas"name="batas" placeholder="batas " require>
+    
 	
 	</div>
-
-
-    
   </div>
     
     <input type="submit" class="btn btn-success btn-icon-split" name="submit" value="Tambah">
@@ -79,12 +68,18 @@ if (isset($_GET['kendaraan'])) {
 
 
 <!-- leaflet map -->
-<div>
-<link rel="stylesheet" href="<?= base_url(); ?>/assets/leaflet/leaflet.css" />
-<script src="<?= base_url(); ?>/assets/leaflet/leaflet.js"></script>
+<div id="mapid" style="width: 75%; height: 300px;" >
+<link rel="stylesheet" href="<?= base_url(); ?>/asset/leaflet/leaflet.css" />
+<script src="<?= base_url(); ?>/asset/leaflet/leaflet.js"></script>
  
 <style>
-#map { height: 180px; }
+#map{ margin: 0 auto 0 auto;
+  height: 90%;
+  width: 80%;
+ }
+ html, body {
+        height: 100%;
+      }
 </style>
 
 <div id="map"></div>
@@ -92,7 +87,7 @@ if (isset($_GET['kendaraan'])) {
 <script>
     var map = L.map('map').setView([42.35, -71.08], 13);
   
-    /*
+    
     L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
           maxZoom: 17,
@@ -110,7 +105,10 @@ if (isset($_GET['kendaraan'])) {
           maxZoom: 17,
           minZoom: 9   
     }).addTo(map);
-    */
+    
+    map.on('click', function (e) {
+    alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng);
+});
      
     // needed token
     //ACCESS_TOKEN = 'pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ';

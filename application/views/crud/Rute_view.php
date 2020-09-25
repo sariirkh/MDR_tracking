@@ -15,8 +15,8 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 <div class="card-header py-3">
-<h6 class="m-0 font-weight-bold text-primary datatable">Rute</h6>
-<a href="<?php echo base_url('rute/tambah');?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Rute</button></a>
+<h6 class="m-0 font-weight-bold text-primary datatable">Request</h6>
+<a href="<?php echo base_url('rute/tambah');?>"><button class="btn btn-primary btn-sm btninsert" >+ Input Request</button></a>
 </div>
   <div class="card-body">
     <div class="table-responsive">
