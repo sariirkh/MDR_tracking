@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller{
     function __construct(){
         parent::__construct();
+        
+   // $this->load->library('datatables');
         $this->load->model('Admin_model');
         if($this->Admin_model->isNotLogin()) redirect('login');
     }
@@ -106,7 +108,51 @@ class Admin extends CI_Controller{
         $this->template->views('crud/tambah_admin');
     }
 
+
+
+    // function daftar(){
+    //     $x['daftar']=$this->Admin_model->get_daftar();
+    //     $this->load->view('crud/data_admin',$x);
+    //   }
     
+    //   function get_guest_json() { //data data produk by JSON object
+    //     header('Content-Type: application/json');
+    //     echo $this->Admin_model->get_all_produk();
+    //   }
+    
+    //   function simpan(){ //function simpan data
+    //     $data=array(
+    //       'id_admin'     => $this->input->post('id_admin'),
+    //       'nama_admin'     => $this->input->post('nama_admin'),
+    //       'user_admin'    => $this->input->post('user_admin'),
+    //       'password' => $this->input->post('password'),
+    //       'email' => $this->input->post('email'),
+    //       'level' => $this->input->post('level')
+    //     );
+    //     $this->db->insert('login_admin', $data);
+    //     redirect('Admin');
+    //   }
+    
+    //   function update(){ //function update data
+    //     $id=$this->input->post('id_admin');
+    //     $data=array(
+    //       'nama_admin'     => $this->input->post('nama_admin'),
+    //       'user_admin'    => $this->input->post('user_admin'),
+    //       'password' => $this->input->post('password'),
+    //       'email' => $this->input->post('email'),
+    //       'level' => $this->input->post('level')
+    //     );
+    //     $this->db->where('id_admin',$id);
+    //     $this->db->update('login_admin', $data);
+    //     redirect('Admin');
+    //   }
+    
+    //   function delete(){ //function hapus data
+    //     $kode=$this->input->post('id_admin');
+    //     $this->db->where('id_admin',$id);
+    //     $this->db->delete('login_admin');
+    //     redirect('Admin');
+    //   }
 
 
 }

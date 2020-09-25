@@ -83,7 +83,7 @@ class rute extends CI_Controller{
 
     public function edit($id_lokasi){
         $where = array('id_lokasi' => $id_lokasi);
-        $data['tempat'] = $this->rute_model->edit_data($where, 'lokasi')->result();
+        $data['lokasi'] = $this->rute_model->edit_data($where, 'lokasi')->result();
         $this->template->views('crud/edit_rute',$data);
     }
     public function hapus($id_lokasi){

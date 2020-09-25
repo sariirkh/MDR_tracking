@@ -36,7 +36,7 @@
 <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url('rute');?>">
     <i class="fas fa-fw fa fa-map-marker"></i>
-    <span>Request</span></a>
+    <span>Request Rute</span></a>
 </li>
 
 <li class="nav-item">

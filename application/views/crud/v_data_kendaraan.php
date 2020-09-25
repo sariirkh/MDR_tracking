@@ -24,7 +24,7 @@
         <thead>
           <tr>
           <th scope="col">No.</th>
-            <th scope="col">Id.Kendaraan</th>
+            <th scope="col">Id Kendaraan</th>
             <th scope="col">Jenis Kendaraan</th>
             <th scope="col">Merk Kendaraan</th>
             <th scope="col">Nomor Kendaraan</th>
@@ -37,7 +37,7 @@
         <tfoot>
           <tr>
           <th scope="col">No.</th>
-            <th scope="col">Id.Kendaraan</th>
+            <th scope="col">Id Kendaraan</th>
             <th scope="col">Jenis Kendaraan</th>
             <th scope="col">Merk Kendaraan</th>
             <th scope="col">Nomor Kendaraan</th>

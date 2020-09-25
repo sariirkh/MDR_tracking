@@ -26,21 +26,7 @@ class Admin_model extends CI_Model{
     function cek_login($table,$where){
        return $this->db->get_where($table,$where);
     }
-//PAKET TOUR
-    function getPaketById(){
-        $this->db->select('*');
-        $this->db->from('paket_tour');
-        $query = $this->db->get();
-        return $query;
-    }
-    function input_paket($data){
-        try{
-            $this->db->insert('paket_tour', $data);
-            return true;
-        }catch(Exception $e){
-            
-        }
-    }
+
 
     //LOGIN
     function login($user,$pass,$table){
@@ -54,6 +40,18 @@ class Admin_model extends CI_Model{
     function isNotLogin(){
         return $this->session->userdata('session_admin') === null;
     }
+
+    // function get_daftar(){
+    //     $hsl=$this->db->get('daftar');
+    //     return $hsl;
+    //   }
+    //   function get_all_produk() {
+    //         $this->datatables->select('id_admin, nama_admin, user_admin, password, email, level');
+    //         $this->datatables->from('login_admin');
+    //         $this->datatables->join('kategori', 'barang_kategori_id=kategori_id');
+    //         $this->datatables->add_column('view', '<a href="javascript:void(0);" class="edit_record btn btn-info btn-xs" data-kode="$1" data-nama="$2" data-harga="$3" data-kategori="$4">Edit</a>  <a href="javascript:void(0);" class="hapus_record btn btn-danger btn-xs" data-kode="$1">Hapus</a>','barang_kode,barang_nama,barang_harga,kategori_id,kategori_nama');
+    //         return $this->datatables->generate();
+    //   }
    
 }
 ?>
