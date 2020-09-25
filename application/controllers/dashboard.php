@@ -7,7 +7,7 @@ class dashboard extends CI_Controller{
         //if($this->Admin_model->isNotLogin()) redirect('login');
     }
     public function map(){
-        $this->load->view('crud/v_dashboard');
+        $this->load->view('v_dashboard');
     }
     
     public function index(){
